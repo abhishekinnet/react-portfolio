@@ -315,8 +315,19 @@ const experiences = [
 
 const extracurricular = [
   {
+    title: "IBM RAG and Agentic AI",
+    type: "Professional Certificate",
+    icon: ibm,
+    iconBg: "#052FAD",
+    date: "Feb 2026",
+    points: [
+      "RAG Pipelines, Vector Databases, Agentic AI, LangChain, LangGraph, CrewAI, AutoGen, BeeAI, MCP, Multimodal Generative AI",
+    ],
+    credential: "https://coursera.org/verify/professional-cert/S9ENFFEVMD37",
+  },
+  {
   title: "GitHub Copilot Intermediate (GH-300)",
-  type: "Microsoft Certification",
+  type: "Professional Certificate",
   icon: microsoft,
   iconBg: "#000000",
   date: "Issued: Oct 13, 2025 - Expires: Oct 13, 2027",

@@ -19,7 +19,10 @@ const ExperienceCard = React.memo(({ experience, isActive, onClick, index }) => 
       aria-selected={isActive}
       aria-label={`${experience.title} at ${experience.company_name}`}
     >
-      <div className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden mr-4">
+      <div
+        className="flex-shrink-0 w-16 h-16 rounded-full overflow-hidden mr-4"
+        style={{ backgroundColor: experience.iconBg || 'transparent' }}
+      >
         <img
           src={experience.icon}
           alt={experience.company_name}
