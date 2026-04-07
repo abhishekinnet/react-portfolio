@@ -113,5 +113,6 @@ const resumeDevPlugin = {
 }
 
 export default defineConfig({
+  base: '/react-portfolio/',
   plugins: [react(), resumeDevPlugin],
 })
