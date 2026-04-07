@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import emailjs from "@emailjs/browser"
 import { Toaster, toast } from "react-hot-toast"
 import Confetti from "react-confetti"
-import ReCAPTCHA from "react-google-recaptcha"
 
 import { styles } from "../styles"
 import { EarthCanvas } from "./canvas"
@@ -17,8 +16,6 @@ import { faUser, faEnvelope, faComment, faPaperPlane, faSpinner, faPhone } from 
 
 const Contact = () => {
   const formRef = useRef()
-  const captchaRef = useRef()
-  const [captchaToken, setCaptchaToken] = useState(null)
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -75,15 +72,6 @@ const Contact = () => {
       return
     }
 
-    if (!captchaToken) {
-      toast("Hold up! Gotta make sure you're not a spam bot, checkmark the CAPTCHA! 🧠🤖", {
-        icon: "🛡️",
-        duration: 3500,
-        position: "bottom-right",
-      })
-      return
-    }
-
     setLoading(true)
 emailjs
   .send(
@@ -112,8 +100,6 @@ emailjs
             position: "bottom-right",
           })
           setShowConfetti(true)
-          setCaptchaToken(null)
-          captchaRef.current.reset()
           setTimeout(() => {
             setSuccess(false)
             setShowConfetti(false)
@@ -204,18 +190,6 @@ emailjs
               className="bg-black-100/50 backdrop-blur-sm py-4 px-6 placeholder:text-secondary text-white rounded-xl outline-none border-2 border-white/20 font-medium transition-all duration-300 focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 focus:bg-black-100/70 hover:border-white/30 resize-none"
             />
           </label>
-
-          <div className="flex justify-center">
-            <div className="rounded-lg overflow-hidden shadow-lg">
-              <ReCAPTCHA
-                sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-                onChange={(token) => setCaptchaToken(token)}
-                theme="dark"
-                ref={captchaRef}
-              />
-            </div>
-          </div>
-          <span className="text-xs text-gray-400 text-center -mt-4">Protected by reCAPTCHA Enterprise. ⚔️</span>
 
           <button
             type="submit"
