@@ -125,7 +125,7 @@ const Works = () => {
               key={`project-${index}`}
               animate={
                 isMobile
-                  ? {}
+                  ? { hidden: { opacity: 1, y: 0 }, show: { opacity: 1, y: 0 } }
                   : fadeIn("up", "spring", index * 0.5, 0.75)
               }
               {...project}

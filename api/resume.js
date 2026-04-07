@@ -56,6 +56,9 @@ export default async function handler(req, res) {
       if (byBase) {
         filename = byBase.filename;
         fullPath = byBase.fullPath;
+      } else {
+        res.status(404).send('Requested resume not found.');
+        return;
       }
     } else if (url === '/api/resume' || url === '/api/resume/') {
       // Redirect to pretty URL (no extension) so the address bar/tab title show the basename
@@ -79,6 +82,7 @@ export default async function handler(req, res) {
     // Set headers to preserve filename when downloading
     // Serve inline and preserve the real filename for downloads
     res.setHeader('Content-Type', mime);
+    res.setHeader('Cache-Control', 'public, max-age=3600, stale-while-revalidate=86400');
     res.setHeader('Content-Disposition', `inline; filename="${filename}"`);
 
     // For PDFs, adjust the PDF Title metadata to the basename (without ".pdf")
