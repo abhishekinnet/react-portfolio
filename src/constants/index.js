@@ -1,3 +1,4 @@
+import { icon } from "@fortawesome/fontawesome-svg-core";
 import {
   mobile,
   backend,
@@ -56,6 +57,7 @@ import {
   mongodb,
   microsoft,
   ibm,
+  research,
 } from "../assets";
 
 export const navLinks = [
@@ -110,26 +112,26 @@ const services = [
 
 const education = [
   {
-    title: "Honours Computer Science (H. BSc)",
-    company_name: "Ontario Tech University, Oshawa, ON",
-    icon: otu,
+    title: "Computer Science Enginerring",
+    company_name: "VIVEKANANDA GLOBAL UNIVERSITY JAIPUR",
+    icon: "/image.png",
     iconBg: "#fff",
-    date: "2022 - Present",
+    date: "20 - Present",
     points: [
-      "President's List - Winter 2025",
-      "Dean's Honours List - Fall 2024",
+      "🎓 Expected Graduation: August 2028 ",
+      
       // "Courses undertaken: Data Structures and Algorithms, OOP, REST API, Software Design, Python Data Analysis, Discrete Mathematics, Computer Architecture, Operating Systems, PostgreSQL.",
     ],
   },
   {
     title: "High School",
-    company_name: "Richmond Hill High School, ON",
-    icon: rhhs,
+    company_name: "CENTRAL BOARD OF SECONDARY EDUCATION",
+    icon: "https://upload.wikimedia.org/wikipedia/en/9/95/CBSE_new_logo.svg",
     iconBg: "#fff",
-    date: "2018-2022",
+    date: "2021-2023",
     points: [
-      "Ontario Scholar",
-      "12th Grade: 96%",
+      "P C HIGH SCHOOL PATSA",
+      "PCM",
     ],
   },
 ];
@@ -258,57 +260,58 @@ const designTools = [
   // },
 ];
 
+import mernLogo from "../assets/mern.svg";
+import javacLogo from "../assets/javac.svg";
+import leadershipLogo from "../assets/leadership.svg";
+import architectureLogo from "../assets/architecture.svg";
+
 const experiences = [
-  {
-    title: "Software Engineer Intern",
-    company_name: "IBM",
-    icon: ibm,
-    iconBg: "#fff",
-    date: "Jan. 2026 - Present",
+ {
+    title: "Full Stack MERN Developer",
+    date: "2026 – Present",
+    icon: mernLogo,
+    iconBg: "#383E56",
     points: [
-      "Full-Stack AI Engineering • watsonx Workshop 🤖",
+      "Developed full-stack web applications using MongoDB, Express.js, React, and Node.js.",
+      "Built REST APIs and integrated dynamic frontend with backend services.",
+      "Designed responsive UI using Tailwind CSS with modern UX principles.",
+      "Implemented authentication, routing, and state management in real-world projects."
     ],
   },
   {
-    title: "IT Technician",
-    company_name: "Canada's Wonderland",
-    icon: wonderland,
+    title: "Java & C Programmer",
+    date: "2024 – Present",
+    icon: javacLogo,
     iconBg: "#fff",
-    date: "Jun. 2023 - Jan. 2026",
     points: [
-      "Provisioned Windows PCs with MDT, and deployed scripting via PowerShell and ConnectWise.",
-      "Managed AD accounts to propagate ACLs and unified access across in-house apps, Exchange, and SharePoint.",
-      "Configured Cisco CUCM, Unity, and Finesse for stable call routing and voicemail services.",
-      "Handled switch patching and VLAN/routing via PuTTY & SecureCRT, ensuring stable network performance.",
-      "Deployed Oracle POS/KDS/Debit solutions (EMC, Simphony), tracking updates in Jira & Confluence.",
+      "Solved programming problems using Java and C with strong logic building.",
+      "Worked on data structures, loops, functions, and object-oriented concepts.",
+      "Developed mini applications and console-based projects.",
+      "Focused on writing clean, efficient, and optimized code."
     ],
   },
   {
-    title: "System Support Specialist",
-    company_name: "Mackenzie Health",
-    icon: mackenziehealth,
+    title: "Management & Leadership Skills",
+    date: "2024 – Present",
+    icon: leadershipLogo,
     iconBg: "#fff",
-    date: "Jan. 2023 - Aug. 2023",
     points: [
-      "Overhauled 400+ Surface tablets to bedside iPads, deploying the in-house 'Get Well Soon' app with Intune to hospital systems.",
-      "Developed and refined an admin portal for managing app services, user roles, and subscription expirations.",
-      "Utilized Jamf Pro for MDM, securely deploying iPads/iPhones across clinical departments.",
-      "Implemented Vocera VOIP on iPhones, enabling real-time communication among nurses and ER staff.",
-      "Performed in-room checks, resolved device issues, and collaborated with vendors on bug logs and system updates.",
+      "Led academic and project teams, ensuring timely delivery of tasks.",
+      "Demonstrated strong problem-solving and decision-making abilities.",
+      "Managed multiple projects efficiently with proper planning.",
+      "Collaborated with peers and improved communication skills."
     ],
   },
   {
-    title: "Tech Sales Associate",
-    company_name: "Staples Canada (Co-op)",
-    icon: staples,
-    iconBg: "#1294C8",
-    date: "Sep. 2020 - Feb. 2021",
+     title: "System Architecture & Backend Learner",
+    date: "2025 – Present",
+    icon: architectureLogo,
+    iconBg:"#fff",
     points: [
-      "Provided specialized support for Windows, Mac, and Linux, performing on-site installations, repairs, and optimizations.",
-      "Streamlined inventory processes by handling SKUs and POs, maintaining a well-organized sales floor.",
-      "Maintained accurate sales and inventory data in IBM AS/400, improving workflows and operational efficiency.",
-      "Resolved complex technical inquiries, delivering tailored solutions that ensured high customer satisfaction.",
-      "Facilitated e-commerce transactions, merging in-store and online channels.",
+      "Learning system design concepts like client-server architecture and APIs.",
+      "Exploring database design, scalability, and backend workflows.",
+      "Understanding cloud basics and deployment strategies.",
+      "Building small backend systems to apply architectural concepts."
     ],
   },
 ];
@@ -316,355 +319,118 @@ const experiences = [
 
 const extracurricular = [
   {
-    title: "IBM RAG and Agentic AI",
-    type: "Professional Certificate",
-    icon: ibm,
+    title: "Linux System Administration",
+    type: "EduPyramids, IIT Bombay",
+    icon: ubuntu,
+    iconBg: "#E95420",
+    date: "Mar 2026",
+    points: [
+      "Mastered core Linux architecture, shell command-line operations, and advanced system administration principles.",
+      "Demonstrated strong proficiency in secure system configuration, process management, and file permissions.",
+      "Successfully cleared a rigorous proctored examination conducted remotely by IIT Bombay (76.67% Score).",
+      "Awarded 2 academic credits via the National Mission on Education, Ministry of Education, Govt. of India."
+    ],
+    credential: "/LINUX CERTIFICATE.jpg",
+  },
+  {
+    title: "Advanced C Programming",
+    type: "Professional Certification",
+    icon: cplusplus,
+    iconBg: "#00599C", // Standard C/C++ blue
+    date: "2026",
+    points: [
+      "Mastered foundational and advanced concepts of C programming, including memory management and pointer arithmetic.",
+      "Developed high-performance algorithms and optimized code execution for resource-constrained environments.",
+      "Demonstrated strong problem-solving skills through hands-on implementation of complex data structures.",
+      "Built robust, scalable, and secure applications requiring low-level hardware interactions."
+    ],
+    credential: "/C CERTIFICATE.jpg",
+  },
+  {
+    title: "Core & Advanced Java",
+    type: "Professional Certification",
+    icon: java,
+    iconBg: "#B07219",
+    date: "2026",
+    points: [
+      "Mastered Object-Oriented Programming (OOP) principles, multithreading, and Exception Handling.",
+      "Developed scalable and robust algorithms utilizing the Java Collections Framework and Data Structures.",
+      "Demonstrated strong problem-solving skills by architecting and developing efficient console-based and UI sub-systems.",
+      "Optimized memory usage, performance, and application lifecycle with an in-depth understanding of the JVM."
+    ],
+    credential: "/JAVA CERTIFICATE.jpg",
+  },
+  {
+    title: "Academic Research & Innovation",
+    type: "Research Publication / Study",
+    icon: research,
+    iconBg: "#ffffff", // White background to make the vibrant logo pop
+    date: "2026",
+    points: [
+      "Conducted in-depth academic research focusing on innovative methodologies, data-driven analysis, and solving complex problems.",
+      "Synthesized core findings into structured models, demonstrating strong critical thinking and systematic literature review skills.",
+      "Explored advanced technical concepts and evaluated their practical feasibility for real-world software integration.",
+      "Documented and presented comprehensive research findings, highlighting the potential impact on modern scalable architectures."
+    ],
+    credential: "/Research.jpg",
+  },
+  {
+    title: "Regional Tech Summit & Networking",
+    type: "Leadership & Community Engagement",
+    icon: leadershipLogo,
+    iconBg: "#512DA8", // A rich deep purple signifying community and leadership
+    date: "2026",
+    points: [
+      "Actively participated in the Regional Meet, engaging in high-level discussions with industry leaders and technical peers.",
+      "Explored cutting-edge tech trends and exchanged innovative ideas on modern development workflows.",
+      "Expanded professional network by building meaningful connections with seasoned experts and mentors.",
+      "Demonstrated strong proactive communication, leadership potential, and dedication to community growth."
+    ],
+    credential: "/Regional Meet.jpeg",
+  },
+  {
+    title: "Agentic AI Architect",
+    type: "IBM SkillsBuild & CSRBOX",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg",
     iconBg: "#052FAD",
-    date: "Feb 2026",
+    date: "2025",
     points: [
-      "RAG Pipelines, Vector Databases, Agentic AI, LangChain, LangGraph, CrewAI, AutoGen, BeeAI, MCP, Multimodal Generative AI",
+      "Agentic AI: From Learner to Builder - Become an AI Agent Architect",
+      "Successfully completed the 4 weeks program",
+      "Unique ID: AAI2025CSRBOX0679"
     ],
-    credential: "https://coursera.org/verify/professional-cert/S9ENFFEVMD37",
-  },
-  {
-    title: "Microsoft Full-Stack Developer",
-    type: "Professional Certificate",
-    icon: microsoft,
-    iconBg: "#000000",
-    date: "Feb 2026",
-    points: [
-      "C#, .NET 10, Blazor WebAssembly, ASP.NET Core Web API, SQL Server, JWT Auth, RBAC, CI/CD, Entity Framework Core",
-    ],
-    credential: "https://coursera.org/verify/professional-cert/MSK7DL3J65TJ",
-  },
-  {
-  title: "GitHub Copilot Intermediate (GH-300)",
-  type: "Professional Certificate",
-  icon: microsoft,
-  iconBg: "#000000",
-  date: "Issued: Oct 13, 2025 - Expires: Oct 13, 2027",
-  points: [
-    "Prompt Engineering, Copilot Chat Architecture, Policy Enforcement, Enterprise AI Integration, Secure Development Workflows"
-  ],
-  credential: "https://learn.microsoft.com/api/credentials/share/en-us/sunnypatell/D07D3774894C605?sharingId=6255C292987551EF",
-  },
-  {
-    title: "MongoDB Python Developer Path",
-    type: "Proof of Completion",
-    icon: mongodb,
-    iconBg: "#000000",
-    date: "Feb 2025",
-    points: ["PyMongo, NoSQL Schema Design, Data Aggregation, MongoDB Query Optimization"],
-    credential: "https://learn.mongodb.com/c/tf2DSC7hTcyM3NBZjkLPoA",
-  },
-  {
-    title: "Github Foundations",
-    type: "Professional Certificate",
-    icon: github,
-    iconBg: "#000000",
-    date: "Issued: Sep 2024 - Expires: Sep 2027",
-    points: ["Version Control, Git, Actions, CI/CD, Repository Management, SAP Workflow"],
-    credential: "https://www.credly.com/badges/b6f69785-2da8-447e-b02c-3350bf9af803",
-  },
-  {
-    title: "Certified Enterprise Scripting Architect",
-    type: "Automate | Connectwise University",
-    icon: connectwise,
-    iconBg: "#748C7B",
-    date: "Jul 2024",
-    points: ["RMM, MDM, Powershell, Scripting, Windows Server, Enterprise Architecture, Query Optimization"],
-    credential: connectwisecert,
-  },
-  {
-    title: "Google IT Automation With Python",
-    type: "Professional Certificate",
-    icon: google,
-    iconBg: "#050C18",
-    date: "Mar 2023",
-    points: [
-      "Configuration Management, Automation, Google Cloud Platform (GCP), Cloud Servers and VM's, Version Control Tools, Automation.",
-    ],
-    credential: "https://www.coursera.org/account/accomplishments/specialization/certificate/82SZFUWF4B3T",
-  },
-  {
-    title: "WHMIS (Worker Health and Safety)",
-    type: "Government Workforce Requirement",
-    icon: whmis,
-    iconBg: "#CCCFD8",
-    date: "Sep 2020",
-    points: ["Hazard Awareness, Legal Compliance, Personal Protection, Accident Prevention"],
+    credential: "/Agentic_AI_Certificate.jpg",
   },
 ];
 
 const projects = [
   {
-    name: "ATS Screener 🔍",
+    name: "Kisan Sahayak (AI AgTech) 🌾",
     description:
-      "Free, open-source ATS resume screener that simulates 6 real enterprise platforms (Workday, Taleo, iCIMS, Greenhouse, Lever, SuccessFactors) instead of giving you one made-up score. Each platform uses its own weighted scoring model with verified math for keyword matching, format parsing, and experience evaluation. Features AI-powered scoring via Gemini with a rule-based fallback engine, PDF/DOCX parsing entirely in-browser, and per-platform optimization suggestions that reference specific lines in your resume. 500+ users on launch night.",
+      "Kisan Sahayak is an AI-powered AgTech platform designed to empower farmers with real-time data and automated decision-making. Features an intelligent AI Advisor for crop disease diagnosis (e.g., leaf blight detection), dynamic market price-tracking bots, and an automated weather alert system. Built with a modern tech/AI stack to include resource management dashboards, expense tracking, and farm yield analytics, ensuring sustainable and optimized agriculture.",
     tags: [
       {
-        name: "SvelteKit 2",
+        name: "AI-Advisor",
         color: "blue-text-gradient",
       },
       {
-        name: "Gemini/NLP",
+        name: "AgTech",
         color: "green-text-gradient",
       },
       {
-        name: "ATS-Simulation",
+        name: "Market-Bot",
         color: "pink-text-gradient",
       },
       {
-        name: "Rule-Engine",
+        name: "Analytics",
         color: "blue-text-gradient",
       },
     ],
-    image: atsscreenerlanding,
-    source_code_link: "https://github.com/sunnypatell/ats-screener",
-    live_project_link: "https://ats-screener.vercel.app",
+    image: "/PROJECT.png",
+    source_code_link: "https://kisan-sahayak-tau.vercel.app/", // No repo provided, using live web app
+    live_project_link: "https://kisan-sahayak-tau.vercel.app/",
   },
-    {
-    name: "Axelot ✍️",
-    description:
-      "Axelot is a real-time collaborative writing and knowledge workspace built with Next.js 16, TypeScript, Firebase, TipTap 3, and Yjs. It supports multi-user editing with presence cursors, CRDT-based conflict-free sync over WebRTC, and AI-assisted editing via OpenRouter-backed Next.js API routes. Features secure auth with NextAuth v5 (Google/GitHub OAuth, email/password with bcrypt), Firestore-backed storage with Firebase custom tokens, a Vercel cron-powered trending algorithm, and production deployment via multi-stage Docker pipeline.",
-    tags: [
-      {
-        name: "Next.js 16",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "TipTap 3 / Yjs",
-        color: "green-text-gradient",
-      },
-      {
-        name: "WebRTC",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "OpenRouter AI",
-        color: "blue-text-gradient",
-      },
-    ],
-    image: axelotlanding,
-    source_code_link: "https://github.com/royce-mathew/axelot",
-    live_project_link: "https://www.axelot.io",
-  },
-  {
-    name: "Netdash (Networking Toolbox) 🌐",
-    description:
-      "Netdash is a cross-platform Electron desktop app (macOS, Windows, Linux) with Homebrew distribution, featuring Firebase Auth with Google OAuth and real-time Firestore sync. It includes 15+ networking tools for subnetting, VLSM, IP conflict detection, and multi-vendor configuration generation. Built with RTT measurement via Performance API, TCP port scanning, DNS-over-HTTPS with TTL-aware caching, and RFC-compliant IPv4/IPv6 algorithms with WCAG2.2 accessibility compliance.",
-    tags: [
-      {
-        name: "Electron",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Firebase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "DNS-over-HTTPS",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "WCAG2.2",
-        color: "blue-text-gradient",
-      },
-    ],
-    image: netdashlanding,
-    source_code_link: "https://github.com/sunnypatell/netdash-toolkit/",
-    live_project_link: "https://netdash-toolkit.vercel.app/",
-  },
-  {
-    name: "SecureBank 🏦",
-    description:
-      "SecureBank is a deliberately vulnerable banking simulation built for Capture The Flag (CTF) training, focused on SQL injection and privilege escalation. It features exploit paths including raw query interpolation, single/double URL encoding, and a hidden admin portal to teach secure coding by example. Core features include transaction search/filter, a feedback system, and an admin dashboard with live DB console and security logs. Backed by a normalized SQLite schema with session handling via cookie-signature, and dockerized with structured challenge documentation.",
-    tags: [
-      {
-        name: "CTF",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "SQLi/XSS",
-        color: "green-text-gradient",
-      },
-      {
-        name: "SQLite",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Docker",
-        color: "blue-text-gradient",
-      },
-    ],
-    image: securebankdashboard,
-    source_code_link: "https://github.com/sunnypatell/securebank-ctf",
-    live_project_link: "https://github.com/sunnypatell/securebank-ctf",
-  },
-  {
-    name: "Sunnify (Spotify Downloader) 🎵",
-    description:
-      "Sunnify is a Spotify downloader that reverse-engineers embed pages to extract track metadata by parsing protected JSON states without authentication. It features a cross-platform PyQt5 desktop client (macOS, Windows, Linux) with thread-safe UI updates and supports playlists with 1000+ tracks via Spotify's internal spclient API. Includes retry logic with exponential backoff for rate limiting, cross-platform FFmpeg detection, 43 pytest unit tests with GitHub Actions CI/CD, and ships as a Homebrew Cask.",
-    tags: [
-      {
-        name: "Python",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "PyQt5",
-        color: "green-text-gradient",
-      },
-      {
-        name: "yt-dlp",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "Homebrew",
-        color: "blue-text-gradient",
-      },
-    ],
-    image: sunnifyimage,
-    source_code_link: "https://github.com/sunnypatell/sunnify-spotify-downloader",
-    live_project_link: "https://sunnify-spotify-downloader.vercel.app/",
-  },
-  // {
-  //   name: "FinancialFlow 💸",
-  //   description:
-  //     "Comprehensive personal finance management application built with Next.js and Typescript. It empowers users to take control of their financial health through intuitive tracking, insightful analytics, and personalized recommendations.",
-  //   tags: [
-  //     {
-  //       name: "React-native",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "Typescript",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "Tailwind CSS",
-  //       color: "pink-text-gradient",
-  //     },
-  //     {
-  //       name: "Next.js",
-  //       color: "blue-text-gradient",
-  //     },
-  //   ],
-  //   image: financialflowimage,
-  //   source_code_link: "https://github.com/sunnypatell/financialflow",
-  //   live_project_link: "https://financial-flow.vercel.app/",
-  // },
-  // {
-  //   name: "Enterprise API Tester 🌐",
-  //   description:
-  //     "Comprehensive API testing tool with support for all major HTTP methods, authentication, and CORS-friendly proxy. Features include request import/export, real-world samples, and local storage for data persistence. Built with Next.js, and TypeScript for optimal performance and developer experience.",
-  //   tags: [
-  //     {
-  //       name: "Typescript",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "Tailwind CSS",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "Next.js",
-  //       color: "pink-text-gradient",
-  //     },
-  //     {
-  //       name: "Authentication-Body",
-  //       color: "blue-text-gradient",
-  //     },
-  //   ],
-  //   image: enterpriseapitester,
-  //   source_code_link: "https://github.com/sunnypatell/enterprise-api-request-tester",
-  //   live_project_link: "https://enterprise-api-request-tester.vercel.app/",
-  // },
-  {
-    name: "KnifeThrow 🎯",
-    description:
-      "KnifeThrow is a Java Swing-based 2D mini-game, packed by maven with over 5000 lines of code. It includes a menu, game-over screens, sound effects, and custom sprites. Players unlock different knives with varied abilities in a dedicated knife shop. The game features improved collision systems, animations, and particle effects for an immersive experience.",
-    tags: [
-      {
-        name: "java",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "swing",
-        color: "green-text-gradient",
-      },
-      {
-        name: "maven",
-        color: "pink-text-gradient",
-      },
-      {
-        name: "arcadegame",
-        color: "green-text-gradient",
-      },
-    ],
-    image: knifethrowimage,
-    source_code_link: "https://github.com/sunnypatell/KnifeThrow",
-    live_project_link: "https://github.com/sunnypatell/KnifeThrow",
-  },
-  // {
-  //   name: "COVID-19 GTA Cases Data Analysis 🧪",
-  //   description:
-  //     "A deep dive into ongoing COVID-19 outbreaks in the Greater Toronto Area (GTA), Ontario. Using data from a government-licensed dataset called Outbreaks by Public Health Unit (PHU) to explore trends and patterns in these outbreaks. This data analysis integrates the essential aspects of the data science workflow (Filesize: 3.5 MiB, 62699 lines of raw dataset)",
-  //   tags: [
-  //     {
-  //       name: "python",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "tensorflow",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "scikit-learn",
-  //       color: "pink-text-gradient",
-  //     },
-  //     {
-  //       name: "pandas",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "matplotlib",
-  //       color: "pink-text-gradient",
-  //     },
-  //     {
-  //       name: "numpy",
-  //       color: "blue-text-gradient",
-  //     },
-  //   ],
-  //   image: pythonanalysis,
-  //   source_code_link: "https://drive.google.com/drive/folders/1cTbp-6-flypV-kj3-q606UwwWEralu11",
-  //   live_project_link: "https://drive.google.com/drive/folders/1cTbp-6-flypV-kj3-q606UwwWEralu11",
-  // },
-  // {
-  //   name: "Secure Password Generator 🔐",
-  //   description:
-  //     "Secure Password Generator is a Java-based tool designed to generate and manage secure passwords, prioritizing simplicity, security, and user-friendliness. It employs industry-standard encryption algorithms to create strong, unique passwords resistant to common hacking attempts.",
-  //   tags: [
-  //     {
-  //       name: "java",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "sha-256",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "encryption/decryption",
-  //       color: "pink-text-gradient",
-  //     },
-  //     {
-  //       name: "data-algorithms",
-  //       color: "blue-text-gradient",
-  //     },
-  //   ],
-  //   image: password_generator,
-  //   source_code_link: "https://github.com/sunnypatell/SecurePasswordGenerator",
-  //   live_project_link: "https://github.com/sunnypatell/SecurePasswordGenerator",
-  // },
+,
 ];
 
 const testimonials = [

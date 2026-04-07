@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Tilt } from "react-tilt";
 import { motion, useAnimation, useInView } from "framer-motion";
 
@@ -25,7 +25,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full"
+        className="bg-tertiary p-4 sm:p-5 rounded-2xl sm:w-[360px] w-full"
       >
         <div className="relative w-full h-[230px]">
           <img
@@ -63,7 +63,7 @@ const ProjectCard = ({
 
         {live_project_link && (
           <a href={live_project_link} target="_blank" rel="noopener noreferrer">
-            <button className="mt-3 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)]">
+            <button className="mt-3 bg-primary hover:bg-primary-dark text-white px-4 py-2 rounded-md font-medium transition-all duration-300 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)] z-10 relative">
               Live Project
             </button>
           </a>
@@ -75,8 +75,16 @@ const ProjectCard = ({
 
 const Works = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" }); // Adjust amount as needed
+  const isInView = useInView(ref, { once: true, margin: "0px 0px -200px 0px" }); 
   const mainControls = useAnimation();
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    handleResize(); // Initial check
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     if (isInView) {
@@ -111,18 +119,12 @@ const Works = () => {
       </motion.div>
 
       <motion.div>
-        <div
-          className={`${
-            window.innerWidth <= 768
-              ? "grid grid-cols-1 gap-4 place-items-center"
-              : "flex flex-wrap gap-7"
-          }`}
-        >
+        <div className="mt-12 flex flex-wrap justify-center gap-4 sm:gap-7">
           {projects.map((project, index) => (
             <ProjectCard
               key={`project-${index}`}
               animate={
-                window.innerWidth <= 768
+                isMobile
                   ? {}
                   : fadeIn("up", "spring", index * 0.5, 0.75)
               }

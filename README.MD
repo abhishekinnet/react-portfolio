@@ -1,38 +1,35 @@
 <div align="center">
 
-# Sunny Patel — 3D Portfolio
+# Abhishek Jha — 3D Portfolio
 
 <p align="center">
-	<a href="https://github.com/sunnypatell/react-threejs-portfolio/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/sunnypatell/react-threejs-portfolio?style=social"></a>
-	<a href="https://github.com/sunnypatell/react-threejs-portfolio/network/members"><img alt="Forks" src="https://img.shields.io/github/forks/sunnypatell/react-threejs-portfolio?style=social"></a>
-	<a href="#tech-stack"><img alt="Built with" src="https://img.shields.io/badge/Built%20with-Vite%20·%20React%20·%20Three.js-915EFF"></a>
-	<a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Custom-blue"></a>
-	<a href="https://www.sunnypatel.net"><img alt="Live" src="https://img.shields.io/badge/live-sunnypatel.net-00C853"></a>
+  <a href="https://github.com/abhishekinnet/react-threejs-portfolio/stargazers"><img alt="Stars" src="https://img.shields.io/github/stars/abhishekinnet/react-threejs-portfolio?style=social"></a>
+  <a href="https://github.com/abhishekinnet/react-threejs-portfolio/network/members"><img alt="Forks" src="https://img.shields.io/github/forks/abhishekinnet/react-threejs-portfolio?style=social"></a>
+  <a href="#tech-stack"><img alt="Built with" src="https://img.shields.io/badge/Built%20with-Vite%20·%20React%20·%20Three.js-915EFF"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/badge/license-Custom-blue"></a>
 </p>
 
 <p align="center">
-	<a href="https://github.com/sunnypatell/react-threejs-portfolio/issues"><img alt="Issues" src="https://img.shields.io/github/issues/sunnypatell/react-threejs-portfolio?color=%23915EFF"></a>
-	<a href="https://github.com/sunnypatell/react-threejs-portfolio/pulls"><img alt="PRs" src="https://img.shields.io/github/issues-pr/sunnypatell/react-threejs-portfolio?color=%2300B8D9"></a>
-	<img alt="Last commit" src="https://img.shields.io/github/last-commit/sunnypatell/react-threejs-portfolio?color=%23A3E635">
-	<img alt="Top language" src="https://img.shields.io/github/languages/top/sunnypatell/react-threejs-portfolio?color=%23F59E0B">
-	<img alt="Repo size" src="https://img.shields.io/github/repo-size/sunnypatell/react-threejs-portfolio?color=%239999FF">
-	<a href="#contributing"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-ff69b4.svg"></a>
+  <a href="https://github.com/abhishekinnet/react-threejs-portfolio/issues"><img alt="Issues" src="https://img.shields.io/github/issues/abhishekinnet/react-threejs-portfolio?color=%23915EFF"></a>
+  <a href="https://github.com/abhishekinnet/react-threejs-portfolio/pulls"><img alt="PRs" src="https://img.shields.io/github/issues-pr/abhishekinnet/react-threejs-portfolio?color=%2300B8D9"></a>
+  <img alt="Last commit" src="https://img.shields.io/github/last-commit/abhishekinnet/react-threejs-portfolio?color=%23A3E635">
+  <img alt="Top language" src="https://img.shields.io/github/languages/top/abhishekinnet/react-threejs-portfolio?color=%23F59E0B">
+  <img alt="Repo size" src="https://img.shields.io/github/repo-size/abhishekinnet/react-threejs-portfolio?color=%239999FF">
+  <a href="#contributing"><img alt="PRs welcome" src="https://img.shields.io/badge/PRs-welcome-ff69b4.svg"></a>
 </p>
 
 </div>
 
 <p align="center">
-	<picture>
-		<img src="src/assets/logo0.png" alt="Sunny Patel Portfolio" width="220" />
-	</picture>
+  <picture>
+    <img src="src/assets/logo0.png" alt="Abhishek Jha Portfolio" width="220" />
+  </picture>
 </p>
 
 An immersive, performant portfolio powered by React, react-three-fiber (Three.js), and Tailwind CSS — featuring a 3D hero scene, animated skills grid, project gallery with tilt effects, and a production-ready contact form (EmailJS + reCAPTCHA) with a real-time Earth canvas backdrop.
 
-<p align="center"><strong><a href="https://www.sunnypatel.net">Live Demo → sunnypatel.net</a></strong></p>
-
 <details>
-	<summary><b>Table of Contents</b></summary>
+  <summary><b>Table of Contents</b></summary>
 
 - Overview
 - Features
@@ -59,8 +56,6 @@ An immersive, performant portfolio powered by React, react-three-fiber (Three.js
 ![](SPLASHSCREEN.png)
 
 This project is a modern single-page application scaffolded with Vite and styled with Tailwind CSS, using react-three-fiber and drei to render high-fidelity 3D scenes. Animations are orchestrated with Framer Motion, and analytics are integrated via `@vercel/analytics`.
-
-The site includes a custom domain via GitHub Pages CNAME and can also be deployed to Vercel or any static host.
 
 ## Features
 
@@ -99,19 +94,16 @@ flowchart TD
 ```
 
 ## Quick Start
-
 Prerequisites
 - Node.js 18+ (tested with Node 22.x per `package.json` engines)
 
 Install and run
-
 ```powershell
 npm install
 npm run dev
 ```
 
 Build and preview
-
 ```powershell
 npm run build
 npm run preview
@@ -143,7 +135,6 @@ Used in `src/components/Contact.jsx` via `import.meta.env`.
 
 ```
 react-threejs-portfolio/
-├─ CNAME                        # Custom domain for GitHub Pages
 ├─ index.html                   # Meta tags, root, Vite entry
 ├─ package.json                 # Scripts and dependencies
 ├─ public/
@@ -164,14 +155,13 @@ react-threejs-portfolio/
 
 ## Deployment
 
-GitHub Pages (current)
-- Custom domain via `CNAME` set to `sunnypatel.net`.
-- Build with `npm run build` and publish `dist/` to Pages (e.g., via Actions or manual).
-
-Vercel (optional)
+Vercel (Recommended)
 - Import repo in Vercel; framework: Vite.
 - Build command: `npm run build`, output: `dist`.
 - For SPA routing with React Router, Vercel will serve `index.html` for unknown routes by default. Verify deep links.
+
+GitHub Pages
+- Build with `npm run build` and publish `dist/` to Pages (e.g., via Actions or manual).
 
 Any Static Host
 - Serve the `dist/` directory over any CDN or static hosting provider.
@@ -186,9 +176,9 @@ Any Static Host
 
 3D Models (CC-BY-4.0)
 - Gaming Desktop PC by Yolala1232 — https://sketchfab.com/3d-models/gaming-desktop-pc-d1d8282c9916438091f11aeb28787b66
-	Credit: “This work is based on 'Gaming Desktop PC' by Yolala1232 licensed under CC-BY-4.0.” See `public/desktop_pc/license.txt`.
+  Credit: “This work is based on 'Gaming Desktop PC' by Yolala1232 licensed under CC-BY-4.0.” See `public/desktop_pc/license.txt`.
 - Stylized planet by cmzw — https://sketchfab.com/3d-models/stylized-planet-789725db86f547fc9163b00f302c3e70
-	Credit: “This work is based on 'Stylized planet' by cmzw licensed under CC-BY-4.0.” See `public/planet/license.txt`.
+  Credit: “This work is based on 'Stylized planet' by cmzw licensed under CC-BY-4.0.” See `public/planet/license.txt`.
 
 Libraries
 - React, Three.js, react-three-fiber, drei, Tailwind CSS, Framer Motion, EmailJS, Vite, maath.
@@ -211,35 +201,34 @@ Suggested commit style: conventional commits (e.g., `feat: add mobile camera pre
 ## Security
 
 - Do not commit secrets. Use `.env.local` for EmailJS and reCAPTCHA keys.
-- Report vulnerabilities privately via email: `sunnypatel124555@gmail.com`.
+- Report vulnerabilities privately via email: `ajha74916@gmail.com`.
 
 ## FAQ
 
 - Dev server won't start?
-	- Ensure Node 18+ (repo targets Node 22.x). On Windows, consider `nvm-windows` to manage versions.
+  - Ensure Node 18+ (repo targets Node 22.x). On Windows, consider `nvm-windows` to manage versions.
 - Models not loading?
-	- Confirm GLTF paths in `components/canvas` match files in `public/`.
+  - Confirm GLTF paths in `components/canvas` match files in `public/`.
 - Contact form fails?
-	- Verify EmailJS IDs and reCAPTCHA site key in `.env.local`.
+  - Verify EmailJS IDs and reCAPTCHA site key in `.env.local`.
 
 ## Maintainer
 
 <table>
-	<tr>
-		<td width="80">
-			<img src="src/assets/pfp.png" width="72" height="72" style="border-radius:50%" alt="Sunny Patel" />
-		</td>
-		<td>
-			<b>Sunny Patel</b><br/>
-			<a href="https://www.sunnypatel.net">Website</a> • <a href="mailto:sunnypatel124555@gmail.com">Email</a> • <a href="https://www.linkedin.com/in/sunny-patel-30b460204/">LinkedIn</a>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2">
-			⭐ If you like this project, consider starring it to support ongoing work.
-		</td>
-	</tr>
-  
+  <tr>
+    <td width="80">
+      <img src="src/assets/pfp.png" width="72" height="72" style="border-radius:50%" alt="Abhishek Jha" />
+    </td>
+    <td>
+      <b>Abhishek Jha</b><br/>
+      <a href="mailto:ajha74916@gmail.com">Email</a> • <a href="https://www.linkedin.com/in/abhishek-jha-7b644a26b">LinkedIn</a> • <a href="https://github.com/abhishekinnet">GitHub</a>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2">
+      ⭐ If you like this project, consider starring it to support ongoing work.
+    </td>
+  </tr>
 </table>
 
 ## License
@@ -248,7 +237,6 @@ This project is open source. See `LICENSE` for terms. Third-party 3D assets are 
 
 ## Contact
 
-- Portfolio: https://www.sunnypatel.net
-- Email: sunnypatel124555@gmail.com
-- LinkedIn: https://www.linkedin.com/in/sunny-patel-30b460204/
-
+- Email: ajha74916@gmail.com
+- LinkedIn: https://www.linkedin.com/in/abhishek-jha-7b644a26b
+- GitHub: https://github.com/abhishekinnet

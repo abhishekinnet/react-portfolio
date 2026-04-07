@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="95" fill="#f8fbfc" stroke="#e1eef4" stroke-width="3" />
+  
+  <!-- Java Coffee Cup (Left side) -->
+  <g transform="translate(15, 35) scale(1.4)">
+    <!-- Steam -->
+    <path d="M 28 10 C 33 18 20 22 28 32" fill="none" stroke="#e76f00" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M 38 6 C 43 14 30 18 38 28" fill="none" stroke="#e76f00" stroke-width="3.5" stroke-linecap="round"/>
+    
+    <!-- Main Cup Body -->
+    <path d="M 12 38 L 46 38 C 45 65 13 65 12 38 Z" fill="#007396"/>
+    
+    <!-- Cup Rim/Highlight -->
+    <ellipse cx="29" cy="38" rx="17" ry="2" fill="#53a9c7"/>
+    
+    <!-- Cup Handle -->
+    <path d="M 45 42 Q 58 43 53 53 Q 48 60 40 58" fill="none" stroke="#007396" stroke-width="4.5" stroke-linecap="round"/>
+    
+    <!-- Solid Saucer Base -->
+    <ellipse cx="29" cy="65" rx="20" ry="4" fill="#e76f00"/>
+    <ellipse cx="29" cy="68" rx="16" ry="3" fill="#b95900"/>
+  </g>
+
+  <!-- C Programming Bracket Logo (Right side) -->
+  <g transform="translate(100, 52)">
+    <!-- Left Bracket -->
+    <path d="M 30 5 L 15 5 C 10 5 10 10 10 15 L 10 80 C 10 85 10 90 15 90 L 30 90" fill="none" stroke="#00599C" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- Right Bracket -->
+    <path d="M 60 5 L 75 5 C 80 5 80 10 80 15 L 80 80 C 80 85 80 90 75 90 L 60 90" fill="none" stroke="#00599C" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    
+    <!-- C Character -->
+    <text x="45" y="73" font-family="'Segoe UI', 'Trebuchet MS', Arial, sans-serif" font-weight="900" font-size="70" fill="#00599C" text-anchor="middle">C</text>
+  </g>
+</svg>

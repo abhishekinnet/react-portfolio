@@ -11,40 +11,52 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
-const CertificationCard = ({ title, icon, type, date, points, credential }) => (
-  <div className="certification-card bg-tertiary p-6 rounded-2xl w-full h-full flex flex-col justify-between no-select">
-    <div>
-      <div className="relative w-full h-[50px] mb-4">
-        <img
-          src={icon}
-          alt={title}
-          className="w-auto h-full object-contain no-select"
-        />
-      </div>
-      <h3 className="text-white font-bold text-[20px] mb-2 no-select">{title}</h3>
+const CertificationCard = ({ title, icon, image, type, date, points, credential }) => (
+  <div className="certification-card bg-tertiary p-5 rounded-2xl w-full h-full flex flex-col justify-between no-select overflow-hidden">
+    <div className="flex-1 overflow-y-auto pr-1 custom-scrollbar">
+      {image ? (
+        <div className="relative w-full h-[150px] mb-3 rounded-lg overflow-hidden border border-white/20">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover no-select"
+          />
+        </div>
+      ) : (
+        <div className="relative w-full h-[50px] mb-4">
+          <img
+            src={icon}
+            alt={title}
+            className="w-auto h-full object-contain no-select"
+          />
+        </div>
+      )}
+      <h3 className="text-white font-bold text-[18px] mb-1 no-select leading-tight">{title}</h3>
       <p className="text-secondary text-[12px] mb-1 no-select">{type}</p>
-      <p className="text-secondary text-[12px] mb-3 no-select">{date}</p>
-      <ul className="list-disc ml-5 space-y-1">
-        {points.slice(0, 2).map((point, index) => (
+      {/* <p className="text-secondary text-[10px] mb-2 no-select">{date}</p> */}
+      <ul className="list-disc ml-5 mt-2 space-y-1">
+        {points.map((point, index) => (
           <li
             key={`certification-point-${index}`}
-            className="text-white-100 text-[12px] pl-1 tracking-wider no-select"
+            className="text-white-100 text-[11px] pl-1 tracking-wider no-select"
           >
             {point}
           </li>
         ))}
       </ul>
     </div>
-    <div className="mt-4 flex justify-end no-select">
-      <a
-        href={credential}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="black-gradient text-secondary py-2 px-4 rounded-lg outline-none w-fit text-[12px] font-bold shadow-md shadow-primary transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)] no-select"
-      >
-        View Credential
-      </a>
-    </div>
+    {credential && credential !== "#" && (
+      <div className="mt-3 flex justify-end no-select shrink-0">
+        <a
+          href={credential}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="black-gradient text-secondary py-1.5 px-3 rounded-lg outline-none w-fit text-[11px] font-bold shadow-md shadow-primary transition-all hover:scale-105 hover:shadow-[0_0_10px_rgba(128,0,128,0.7)] no-select"
+        >
+          View Credential
+        </a>
+      </div>
+    )}
   </div>
 );
 

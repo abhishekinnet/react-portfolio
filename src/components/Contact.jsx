@@ -85,20 +85,23 @@ const Contact = () => {
     }
 
     setLoading(true)
+emailjs
+  .send(
+    import.meta.env.VITE_EMAILJS_SERVICE_ID,
+    import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+    {
+      name: form.name,          // ✅ matches {{name}}
+      email: form.email,        // ✅ matches {{email}}
+      message: form.message,    // ✅ matches {{message}}
 
-    emailjs
-      .send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-        {
-          from_name: form.name,
-          to_name: "Sunny Patel",
-          from_email: form.email,
-          to_email: "sunnypatel124555@gmail.com",
-          message: form.message,
-        },
-        import.meta.env.VITE_EMAIL_JS_ACCESS_TOKEN,
-      )
+      // optional (keep if you want)
+      from_name: form.name,
+      from_email: form.email,
+      to_name: "Abhishek Jha",
+      to_email: "ajha74916@gmail.com",
+    },
+    import.meta.env.VITE_EMAIL_JS_ACCESS_TOKEN,
+  )
       .then(
         () => {
           setLoading(false)
@@ -149,15 +152,8 @@ const Contact = () => {
       >
         <div className="flex justify-between items-center mb-4">
           <p className={styles.sectionSubText}>Get in touch</p>
-          <a
-            href="tel:+14372161611"
-            className="text-purple-400 hover:text-purple-300 transition-all duration-300 flex items-center gap-2 hover:gap-3 group"
-          >
-            <FontAwesomeIcon icon={faPhone} className="group-hover:rotate-12 transition-transform duration-300" />
-            <span className="font-medium">(437) 216-1611</span>
-          </a>
         </div>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={`${styles.sectionHeadText} max-sm:text-[28px] max-sm:text-left`}>Contact.</h3>
 
         <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col gap-8">
           <div className="flex flex-col sm:flex-row gap-8">
@@ -204,7 +200,7 @@ const Contact = () => {
               name="message"
               value={form.message}
               onChange={handleChange}
-              placeholder="Hey Sunny, love the website! I'd like to chat about some opportunities you might like! 🎉"
+              placeholder="Hey Abhishek, love the website! I'd like to chat about some opportunities you might like! 🎉"
               className="bg-black-100/50 backdrop-blur-sm py-4 px-6 placeholder:text-secondary text-white rounded-xl outline-none border-2 border-white/20 font-medium transition-all duration-300 focus:ring-2 focus:ring-purple-500/50 focus:border-purple-500 focus:bg-black-100/70 hover:border-white/30 resize-none"
             />
           </label>
@@ -250,7 +246,7 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]">
+      <motion.div variants={slideIn("right", "tween", 0.2, 1)} className="xl:flex-1 xl:h-auto md:h-[550px] sm:h-[350px] h-[250px]">
         <EarthCanvas />
       </motion.div>
     </div>

@@ -4,15 +4,32 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 
 import CanvasLoader from "../Loader";
 
-const Computers = ({ isMobile }) => {
+const Computers = ({ isMobile, isTablet }) => {
   const computer = useGLTF("./desktop_pc/scene.gltf");
   const meshRef = useRef();
 
   useFrame((state, delta) => {
-    if (meshRef.current && isMobile) {
-      meshRef.current.rotation.y += delta * 0.5; // Adjust rotation speed as needed
+    if (meshRef.current && (isMobile || isTablet)) {
+      meshRef.current.rotation.y += delta * 0.5; // Rotate slowly on smaller devices
     }
   });
+
+  const getScale = () => {
+    if (isMobile) return 0.5;
+    if (isTablet) return 0.6;
+    return 0.75;
+  };
+
+  const getPosition = () => {
+    if (isMobile) return [0, -3.5, -1];
+    if (isTablet) return [0, -3.5, -1.5];
+    return [0, -3.25, -1.5];
+  };
+
+  const getRotation = () => {
+    if (isMobile || isTablet) return [0, 0, 0];
+    return [-0.01, -0.2, -0.1];
+  };
 
   return (
     <mesh ref={meshRef}>
@@ -28,9 +45,9 @@ const Computers = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 0.75 : 0.75}
-        position={isMobile ? [0, -3, 0] : [0, -3.25, -1.5]}
-        rotation={isMobile ? [0, 0, 0] : [-0.01, -0.2, -0.1]}
+        scale={getScale()}
+        position={getPosition()}
+        rotation={getRotation()}
       />
     </mesh>
   );
@@ -38,41 +55,43 @@ const Computers = ({ isMobile }) => {
 
 const ComputersCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const [isTablet, setIsTablet] = useState(false);
 
   useEffect(() => {
-    // Add a listener for changes to the screen size
-    const mediaQuery = window.matchMedia("(max-width: 500px)");
+    const mediaQueryMobile = window.matchMedia("(max-width: 640px)");
+    const mediaQueryTablet = window.matchMedia("(min-width: 641px) and (max-width: 1024px)");
 
-    // Set the initial value of the `isMobile` state variable
-    setIsMobile(mediaQuery.matches);
+    setIsMobile(mediaQueryMobile.matches);
+    setIsTablet(mediaQueryTablet.matches);
 
-    // Define a callback function to handle changes to the media query
-    const handleMediaQueryChange = (event) => {
-      setIsMobile(event.matches);
-    };
+    const handleMobileChange = (event) => setIsMobile(event.matches);
+    const handleTabletChange = (event) => setIsTablet(event.matches);
 
-    // Add the callback function as a listener for changes to the media query
-    mediaQuery.addEventListener("change", handleMediaQueryChange);
+    mediaQueryMobile.addEventListener("change", handleMobileChange);
+    mediaQueryTablet.addEventListener("change", handleTabletChange);
 
-    // Remove the listener when the component is unmounted
     return () => {
-      mediaQuery.removeEventListener("change", handleMediaQueryChange);
+      mediaQueryMobile.removeEventListener("change", handleMobileChange);
+      mediaQueryTablet.removeEventListener("change", handleTabletChange);
     };
   }, []);
+
+  const getCameraSpecs = () => {
+    if (isMobile) return { position: [0, 0, 20], fov: 50 };
+    if (isTablet) return { position: [0, 0, 20], fov: 40 }; // A bit tighter than mobile, centered view
+    return { position: [20, 3, 5], fov: 25 };
+  };
 
   return (
     <Canvas
       frameloop='always'
       shadows
       dpr={[1, 2]}
-      camera={isMobile ? 
-        { position: [0, 0, 20], fov: 50 } : 
-        { position: [20, 3, 5], fov: 25 }
-      }
+      camera={getCameraSpecs()}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>
-        {!isMobile && (
+        {(!isMobile && !isTablet) && (
           <OrbitControls
             enableZoom={false}
             maxPolarAngle={Math.PI / 2}
@@ -80,7 +99,7 @@ const ComputersCanvas = () => {
             autoRotate={true}
           />
         )}
-        <Computers isMobile={isMobile} />
+        <Computers isMobile={isMobile} isTablet={isTablet} />
       </Suspense>
 
       <Preload all />

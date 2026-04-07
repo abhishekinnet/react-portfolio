@@ -96,20 +96,20 @@ const Hero = () => {
           display: inline-block;
         }
       `}</style>
-      <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}>
+      <div className={`absolute inset-0 top-[120px] max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5 pointer-events-none z-10`}>
         <div className="flex flex-col justify-center items-center mt-5">
           <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
 
-        <div>
+        <div className="pointer-events-none mt-2 w-full lg:w-3/5">
           <h1 className={`${styles.heroHeadText} text-white`}>
             Hi, I'm <span className="text-[#915EFF]">Abhishek</span> <WavingHand />
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
             I'm a <TypewriterText texts={typedItems} />
             <br />
-            <b>Welcome to my portfolio, please view on desktop for an interactive experience!</b>
+            <b className="max-sm:hidden">Welcome to my portfolio, please view on desktop for an interactive experience!</b>
           </p>
         </div>
       </div>

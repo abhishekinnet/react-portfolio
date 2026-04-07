@@ -90,22 +90,13 @@ const Tech = () => {
   const calculateRows = (width, techArray) => {
     let dynamicRows = [];
     let startIndex = 0;
-    let rowSize = 6;
+    let rowSize = width < 500 ? 3 : 6;
 
-    if (width < 500) {
-      dynamicRows = [
-        techArray.slice(0, 3),
-        techArray.slice(3, 5),
-        techArray.slice(5, 8),
-        techArray.slice(8, 10),
-      ];
-    } else {
-      while (startIndex < techArray.length) {
-        const endIndex = startIndex + rowSize;
-        dynamicRows.push(techArray.slice(startIndex, endIndex));
-        startIndex += rowSize;
-        rowSize = rowSize === 6 ? 5 : 6;
-      }
+    while (startIndex < techArray.length) {
+      const endIndex = startIndex + rowSize;
+      dynamicRows.push(techArray.slice(startIndex, endIndex));
+      startIndex += rowSize;
+      rowSize = (width < 500) ? (rowSize === 3 ? 2 : 3) : (rowSize === 6 ? 5 : 6);
     }
 
     return dynamicRows;
@@ -167,13 +158,8 @@ const Tech = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
         style={{
-          fontFamily: "'', cursive",
-          fontSize: "26px",
-          background: "linear-gradient(90deg, #915EFF, #00BFFF)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-          textFillColor: "transparent",
+          paddingLeft: "15px", /* Prevents left clipping */
+          paddingRight: "15px",
           filter: "drop-shadow(0 0 10px #915EFF)",
         }}
       >{`<${categoryName}>`}</motion.h2>
@@ -205,13 +191,8 @@ const Tech = () => {
           visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
         }}
         style={{
-          fontFamily: "'', cursive",
-          fontSize: "26px",
-          background: "linear-gradient(90deg, #915EFF, #00BFFF)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-          textFillColor: "transparent",
+          paddingRight: "15px", /* Prevents right clipping */
+          paddingLeft: "15px",
           filter: "drop-shadow(0 0 10px #915EFF)",
         }}
       >{`</${categoryName}>`}</motion.h2>
