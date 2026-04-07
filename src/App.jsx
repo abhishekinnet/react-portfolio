@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 import { BrowserRouter } from 'react-router-dom'
 import { About, Contact, Education, Experience, Extracurricular, Hero, Navbar, Tech, Works, StarsCanvas } from './components' // if you want to use skills balls make sure to import tech and do the same for src\components\index.js
@@ -87,11 +87,41 @@ const OTUWebring = () => {
   )
 }
 
+const ScrollToTop = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  return (
+    <div className="fixed bottom-8 right-8 z-[99]">
+      {isVisible && (
+        <button onClick={scrollToTop} className="w-12 h-12 rounded-full violet-gradient text-white flex items-center justify-center cursor-pointer shadow-[0_0_10px_rgba(128,0,128,0.7)] hover:scale-110 transition-all text-2xl font-bold" title="Scroll to Top">
+          &uarr;
+        </button>
+      )}
+    </div>
+  );
+};
+
 function App() {
   return (
       <BrowserRouter>
         <div className='relative z-0 bg-primary'>
-          <div className="div bg-hero-pattern bg-cover bg-no-repeat bg-center">
+          <div className="div bg-hero-pattern bg-cover bg-no-repeat bg-center bg-fixed">
             <Navbar />
             <Hero />
           </div>
@@ -107,6 +137,7 @@ function App() {
             <StarsCanvas />
             <OTUWebring />
           </div>
+          <ScrollToTop />
         </div>
       </BrowserRouter>
   )

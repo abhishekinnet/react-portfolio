@@ -13,6 +13,15 @@
   color-scheme: dark;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
+/* Force canvas to allow vertical up/down scrolling on mobile */
+canvas {
+  touch-action: pan-y !important;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;

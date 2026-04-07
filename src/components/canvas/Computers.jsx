@@ -89,6 +89,7 @@ const ComputersCanvas = () => {
       dpr={[1, 2]}
       camera={getCameraSpecs()}
       gl={{ preserveDrawingBuffer: true }}
+      style={{ touchAction: "pan-y" }}
     >
       <Suspense fallback={<CanvasLoader />}>
         {(!isMobile && !isTablet) && (
